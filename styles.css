@@ -1,0 +1,63 @@
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    
+    background: url('./images/desert.jpg');
+    margin: 0;
+    padding: 0;
+  }
+
+
+  h1 , p{
+    text-align: center;
+    color: rgb(245, 240, 240);
+    text-shadow: 
+    1px 1px 1px rgba(17, 17, 17, 0.35),
+    -1px 1px 1px rgba(17, 17, 17, 0.35),
+    1px -1px 1px rgba(17, 17, 17, 0.35),
+    -1px -1px 1px rgba(17, 17, 17, 0.35);
+    font-size: 1.5rem;
+    font-weight:bold;
+  } 
+
+
+
+  .div-home , .div-leisure{
+  display: grid;
+  grid-template: 180px / auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.div-home  > div {
+  background-color: rgb(184, 131, 131);
+  opacity: 0.70;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  text-shadow: rgb(10, 0, 0);
+  color: white;
+
+}
+
+.div-leisure > div {
+    background-color: rgb(124, 96, 96);
+    opacity: 0.70;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    text-shadow: rgb(252, 251, 251);
+    color: white;
+
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
