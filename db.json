@@ -1,0 +1,24 @@
+
+
+{"news": [
+    {
+    "articulo": "lampara",
+    "precio": "100",
+    "estado": "venta",
+    "actualizado": "today"
+  },
+
+  {
+    "articulo": "mesa",
+    "precio": "200",
+    "estado": "compra",
+    "actualizado": "today"
+  },
+  {
+    "articulo": "sofa",
+    "precio": "500",
+    "estado": "venta",
+    "actualizado": "today"
+  }
+  ]
+}

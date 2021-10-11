@@ -1,58 +1,92 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-*, *::after, *::before {
-    box-sizing: border-box;
+/* Loader */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring.hidden {
+  display: none;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid lightskyblue;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: lightskyblue transparent transparent transparent;
+  z-index: 1000;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background: URL('/images/lamp.jpg');
-    margin: 0;
-    padding: 0;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*background: URL('/images/lamp.jpg');*/
+  margin: 0;
+  padding: 0;
+}
 
-  }
-
-
-h1 , p   {
+h1,
+p {
   text-align: center;
   color: #f5f0f0;
-  text-shadow: 
-  1px 1px 1px rgba(17, 17, 17, 0.35),
-  -1px 1px 1px rgba(17, 17, 17, 0.35),
-  1px -1px 1px rgba(17, 17, 17, 0.35),
-  -1px -1px 1px rgba(17, 17, 17, 0.35);
+  text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.35),
+    -1px 1px 1px rgba(17, 17, 17, 0.35), 1px -1px 1px rgba(17, 17, 17, 0.35),
+    -1px -1px 1px rgba(17, 17, 17, 0.35);
   font-size: 2.5rem;
-  font-weight:bold;
-  } 
+}
 
-.back{
+.back {
   display: flex;
   align-items: flex-end;
 }
 
-.btn{
-  border-style:  double solid;
+.btn {
+  border-style: double solid;
   padding: 10px;
   width: 70px;
   height: 30px;
   margin-left: 95.25rem;
-  
-  
-  
 }
 
-  .div-home , .div-leisure{
+.div-home {
   display: grid;
-  margin-top:50px;
+  margin-top: 50px;
   grid-template: 180px / auto auto auto auto;
   grid-gap: 10px;
   padding: 10px;
-
 }
 
-.div-home  > div {
+.div-home > div {
   background-color: rgb(39, 37, 37);
-  opacity: 0.70;
+  opacity: 0.7;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -60,33 +94,12 @@ h1 , p   {
   color: white;
   border-style: groove;
   background-color: #000000;
-    
+
   opacity: 0.75;
-
 }
 
-.div-leisure > div {
-    background-color: rgb(39, 37, 37);
-    opacity: 0.70;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    text-shadow: rgb(252, 251, 251);
-    color: white;
-    border-style: groove;
-    background-color: #000000;
-      
-    opacity: 0.75;
-
-}
-
-footer{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-.img{
-  width: 5px;
-  height: 5px;
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
