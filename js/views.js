@@ -1,8 +1,8 @@
 export function showNews(news) {
   return `<div class="post">
-    <strong class="articulo">${news.articulo}</strong>
+    <strong class="div">${news.articulo}</strong>
     <p class="precio">${news.precio}</p>
-    <p class="estado">${news.estado}</p>
+    <h2 class="estado">${news.estado}</h2>
     <h3 class="actualizado">${news.actualizado}</h3>
     
 </div>`;

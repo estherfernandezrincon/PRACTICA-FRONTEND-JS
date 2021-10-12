@@ -11,9 +11,10 @@ export default class NewsController {
     try {
       const myNews = DataService.getNews();
       for (const news of myNews) {
-        const newsElement = document.createElement("article");
+        const newsElement = document.createElement("div");
 
         newsElement.innerHTML = showNews(news);
+
         this.element.appendChild(newsElement);
       }
     } catch (error) {
