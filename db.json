@@ -1,24 +1,29 @@
 
-
-{"news": [
-    {
-    "articulo": "lampara",
-    "precio": "100",
-    "estado": "venta",
-    "actualizado": "today"
-  },
-
-  {
-    "articulo": "mesa",
-    "precio": "200",
-    "estado": "compra",
-    "actualizado": "today"
-  },
-  {
-    "articulo": "sofa",
-    "precio": "500",
-    "estado": "venta",
-    "actualizado": "today"
+{"users":[],
+  "news":[
+      {   
+          "id": 1,
+          "articulo": "lampara",
+          "precio": "100",
+          "estado": "venta"
+        },
+        {
+          "id": 2,
+          "articulo": "mesa",
+          "precio": "200",
+          "estado": "compra"
+        },
+        {
+           "id": 3, 
+          "articulo": "sofa",
+          "precio": "500",
+          "estado": "venta"
+        },
+        {
+          "id": 4, 
+          "articulo": "jarron",
+          "precio": "200",
+          "estado": "venta"
+       }
+      ]
   }
-  ]
-}

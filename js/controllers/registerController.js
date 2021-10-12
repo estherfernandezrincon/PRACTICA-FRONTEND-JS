@@ -1,3 +1,5 @@
+import DataService from "../services/DataService.js";
+
 export default class RegisterController {
   constructor(element) {
     this.element = element;
@@ -5,8 +7,10 @@ export default class RegisterController {
   }
 
   checkIfPasswordsAreEqual() {
-    const InputPassword = this.element.querySelector('input[type="password"]');
-    console.log(InputPassword);
+    const InputPassword = this.element.querySelectorAll(
+      'input[type="password"]'
+    );
+
     let password = [];
     for (const newInput of InputPassword) {
       if (password.includes(newInput.value) === false) {
@@ -26,12 +30,24 @@ export default class RegisterController {
   }
 
   attachEventListener() {
-    this.element.addEventListener("submit", function (event) {
-      alert("han pulsado");
+    this.element.addEventListener("submit", async function (event) {
       event.preventDefault();
 
       if (this.checkValidity()) {
-        console.log("Successful Registration");
+        try {
+          const data = new FormData(this); //recoge datos del formulario
+          const username = data.get("username");
+          const password = data.get("password");
+
+          const finalResult = await DataService.newUserRegister(
+            username,
+            password
+          );
+
+          alert(`the user ${username} is correctly registered`);
+        } catch (e) {
+          alert(e);
+        }
       } else {
         let errorMessage = "";
         for (const element of this.elements) {

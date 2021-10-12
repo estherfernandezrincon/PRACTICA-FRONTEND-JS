@@ -3,7 +3,7 @@ export function showNews(news) {
     <strong class="div">${news.articulo}</strong>
     <p class="precio">${news.precio}</p>
     <h2 class="estado">${news.estado}</h2>
-    <h3 class="actualizado">${news.actualizado}</h3>
+
     
 </div>`;
 }

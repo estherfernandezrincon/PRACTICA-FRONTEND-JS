@@ -9,7 +9,7 @@ export default class NewsController {
 
   async renderNews() {
     try {
-      const myNews = DataService.getNews();
+      const myNews = await DataService.getNews();
       for (const news of myNews) {
         const newsElement = document.createElement("div");
 
