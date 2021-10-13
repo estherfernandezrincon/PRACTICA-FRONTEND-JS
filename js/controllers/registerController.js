@@ -1,4 +1,5 @@
 import DataService from "../services/DataService.js";
+import PubSub from "../services/PubSub.js";
 
 export default class RegisterController {
   constructor(element) {
@@ -32,7 +33,7 @@ export default class RegisterController {
   attachEventListener() {
     this.element.addEventListener("submit", async function (event) {
       event.preventDefault();
-
+      //this es el formulario
       if (this.checkValidity()) {
         try {
           const data = new FormData(this); //recoge datos del formulario
@@ -44,9 +45,12 @@ export default class RegisterController {
             password
           );
 
-          alert(`the user ${username} is correctly registered`);
+          PubSub.publish(
+            PubSub.events.SHOW_SUCCESS,
+            `the user ${username} is correctly registered`
+          );
         } catch (e) {
-          alert(e);
+          PubSub.publish(PubSub.events.SHOW_ERROR, e);
         }
       } else {
         let errorMessage = "";
@@ -55,7 +59,7 @@ export default class RegisterController {
             errorMessage += `Error in ${element.name} : ${element.validationMessage}`;
           }
         }
-        alert(errorMessage);
+        PubSub.publish(PubSub.events.SHOW_ERROR, errorMessage);
       }
     });
 

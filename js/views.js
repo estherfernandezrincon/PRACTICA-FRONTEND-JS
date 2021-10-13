@@ -8,8 +8,14 @@ export function showNews(news) {
 </div>`;
 }
 
-export function errorView(error) {
-  return `<div class="error">${error}
+export function errorView(message) {
+  return `<div class="error">${message}
+  <button>Close</button>
+  </div>`;
+}
+
+export function successView(message) {
+  return `<div class="success">${message}
   <button>Close</button>
   </div>`;
 }

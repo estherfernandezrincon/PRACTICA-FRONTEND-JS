@@ -14,8 +14,6 @@ export default class ErrorMessageController {
   }
 
   hideError() {
-    // TODO:  ocultar mensaje error
-    // const notShowError = this.element.innerHTML;
-    // notShowError.classList.toggle(error);
+    this.element.innerHTML = "";
   }
 }

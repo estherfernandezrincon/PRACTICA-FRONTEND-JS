@@ -34,4 +34,28 @@ export default {
       throw e;
     }
   },
+
+  //funcion de login igual que register salvo la url
+  login: async function (username, password) {
+    const url = "http://localhost:8000/auth/login";
+    const requestConfig = {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    };
+
+    const response = await fetch(url, requestConfig);
+    try {
+      const data = await response.json();
+      if (response.ok) {
+        return data;
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (e) {
+      throw e;
+    }
+  },
 };

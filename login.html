@@ -8,12 +8,15 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href='/reset.css'>
 
+    <link rel="stylesheet" href='/styles.css'>
+
 </head>
 
 <body>
 
      <div class="signin-container">
         <h1>WELCOME TO NODEPOP</h1>
+        <div class="error"></div>
         
         <form novalidate> 
             <div class="register-form">
@@ -22,25 +25,20 @@
             </div>
         <div class="register-form">
             <label for="text">Password</label>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" autocomplete="off"  required>
         </div>
 
         <div class="register-form">
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="btn" disabled>GO</button>
 
         </div> 
-     <div class="register-form">
+        <div class="register-form">
         <a href="#recupera contraseña" class="get-pswd">Get Password</a>
+        </div>
+        </form>
+        <script type="module" src="js/login.js"></script>
     </div>
 
-    </form>
-    <div class="new"> 
-    
-        <form action="newRegister.html" method="GET"> 
-    <button type="submit" class="btn">Join Us</button>
-    </form>
-    </div>
-    </div>
     <footer>
         <p>read more about us</p>
     </footer>
