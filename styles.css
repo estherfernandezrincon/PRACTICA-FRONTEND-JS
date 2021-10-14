@@ -125,3 +125,28 @@ footer {
   top: 40%;
   left: 40%;
 }
+
+.welcome {
+  padding: 20px;
+  border-style: dotted;
+  border-color: green;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.access {
+  display: inline;
+
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: gray;
+}
+
+.access a {
+  font-size: 20px;
+  padding: 20px;
+  text-decoration: none;
+}

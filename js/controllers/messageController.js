@@ -1,6 +1,7 @@
 import PubSub from "../services/PubSub.js";
 import { errorView } from "../views.js";
 import { successView } from "../views.js";
+import { welcome } from "../views.js";
 
 export default class MessageController {
   constructor(element) {
@@ -13,6 +14,10 @@ export default class MessageController {
 
     PubSub.subscribe(PubSub.events.SHOW_SUCCESS, (success) => {
       this.showSuccess(success);
+    });
+
+    PubSub.subscribe(PubSub.events.SHOW_WELCOME, (welcome) => {
+      this.showWelcome(welcome);
     });
   }
 
@@ -34,8 +39,29 @@ export default class MessageController {
       this.hideError();
     });
   }
+  //TODO: mostrar mensaje de bienvenida al hacer log in
+  showWelcome(message) {
+    this.element.innerHTML = welcome(message);
+
+    const button = this.element.querySelector("button");
+    button.addEventListener("click", () => {
+      this.hideError();
+    });
+  }
 
   hideError() {
     this.element.innerHTML = "";
   }
+
+  //TODO: borrar contenido de inputs al cerrar mensaje
+
+  // clearInputs() {
+  //   const button = this.element.querySelector("button");
+  //   button.addEventListener("click", () => {
+  //     if (!this.element.querySelectorAll("input") === "") {
+  //       this.element.innerHTML = "";
+  //     }
+  //     this.element.innerHTML;
+  //   });
+  // }
 }

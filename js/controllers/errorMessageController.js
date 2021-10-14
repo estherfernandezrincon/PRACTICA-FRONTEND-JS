@@ -5,8 +5,8 @@ export default class ErrorMessageController {
     this.element = element;
   }
 
-  showError(error) {
-    this.element.innerHTML = errorView(error);
+  showError(e) {
+    this.element.innerHTML = errorView(e);
     const button = this.element.querySelector("button");
     button.addEventListener("click", () => {
       this.hideError();

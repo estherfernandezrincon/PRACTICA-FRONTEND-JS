@@ -19,3 +19,9 @@ export function successView(message) {
   <button>Close</button>
   </div>`;
 }
+
+export function welcome(message) {
+  return `<div class="welcome">${message}
+  <button>Close</button>
+  </div>`;
+}

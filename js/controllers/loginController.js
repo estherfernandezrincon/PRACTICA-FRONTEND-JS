@@ -16,6 +16,7 @@ export default class LoginController {
         const data = new FormData(this.element);
         const username = data.get("username");
         const password = data.get("password");
+        console.log(username, password);
         try {
           const finalResult = await DataService.login(username, password);
           location.href = "/"; //redirigimos a pagina principal
@@ -23,8 +24,11 @@ export default class LoginController {
           PubSub.publish(PubSub.events.SHOW_ERROR, e);
         }
       } else {
-        const showError = "All fields are required";
-        PubSub.subscribe(PubSub.events.SHOW_ERROR, showError);
+        //TODO: mostrar mensaje si todo va bien
+        PubSub.subscribe(
+          PubSub.events.SHOW_WELCOME,
+          `Welcome to NODEPOP ${username}`
+        );
       }
     });
 

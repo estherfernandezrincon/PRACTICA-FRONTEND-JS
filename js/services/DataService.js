@@ -58,4 +58,9 @@ export default {
       throw e;
     }
   },
+
+  isAuthenticated: function () {
+    //si tenemos el token en local stoge estamos autenticados
+    return localStorage.getItem("AUTH_TOKEN") !== null;
+  },
 };

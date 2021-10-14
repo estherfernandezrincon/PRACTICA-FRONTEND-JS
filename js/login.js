@@ -7,4 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const errorMessage = document.querySelector(".error");
   new MessageController(errorMessage);
+
+  const welcomeMessage = document.querySelector(".welcome");
+  new MessageController(welcomeMessage);
 });

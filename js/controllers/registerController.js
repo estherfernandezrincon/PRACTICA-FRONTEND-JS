@@ -44,7 +44,7 @@ export default class RegisterController {
             username,
             password
           );
-
+          location.href = "/";
           PubSub.publish(
             PubSub.events.SHOW_SUCCESS,
             `the user ${username} is correctly registered`
