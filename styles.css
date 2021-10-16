@@ -64,7 +64,7 @@ p {
 }
 
 h2 {
-  color: black;
+  color: red;
 }
 
 .back {
@@ -89,7 +89,7 @@ h2 {
 }
 
 .div-home > div {
-  background-color: rgb(39, 37, 37);
+  background-color: rgb(156, 148, 148);
   opacity: 0.7;
   text-align: center;
   padding: 20px 0;
@@ -102,6 +102,9 @@ h2 {
   opacity: 0.75;
 }
 
+a {
+  text-decoration: none;
+}
 footer {
   position: absolute;
   width: 100%;
@@ -137,16 +140,18 @@ footer {
 
 .access {
   display: inline;
-
+  text-align: end;
   width: 100px;
   height: 100px;
   padding: 5px;
   border: 1px solid blue;
-  background-color: gray;
+  background-color: rgb(209, 199, 199);
 }
 
 .access a {
   font-size: 20px;
   padding: 20px;
   text-decoration: none;
+  align-content: space-between;
+  margin-right: 50px;
 }

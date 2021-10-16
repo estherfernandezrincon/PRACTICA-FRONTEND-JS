@@ -44,11 +44,12 @@ export default class RegisterController {
             username,
             password
           );
-          location.href = "/";
+
           PubSub.publish(
             PubSub.events.SHOW_SUCCESS,
             `the user ${username} is correctly registered`
           );
+          location.href = "/";
         } catch (e) {
           PubSub.publish(PubSub.events.SHOW_ERROR, e);
         }

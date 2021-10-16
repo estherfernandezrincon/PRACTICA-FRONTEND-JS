@@ -1,7 +1,8 @@
-import Pubsub from "../services/Pubsub.js";
+import PubSub from "../services/Pubsub.js";
+import DataService from "../services/DataService.js";
 
 export default class AddNewController {
-  contructor(element) {
+  constructor(element) {
     this.element = element;
     this.attachEventListener();
   }
@@ -12,13 +13,16 @@ export default class AddNewController {
 
       if (this.element.checkValidity()) {
         const data = new FormData(this.element);
-        const message = data.get("message");
+        const item = data.get("item");
+        const sale = data.get("sale");
+        const price = data.get("price");
+        console.log(price);
 
         try {
-          const finalResult = await DataService.AddNew(message);
-          Pubsub.publish(Pubsub.events.SHOW_SUCCESS, "New item registered");
+          const finalResult = await DataService.addNew(item, sale, price);
+          PubSub.publish(PubSub.events.SHOW_SUCCESS, "New item registered");
         } catch (e) {
-          Pubsub.publish(Pubsub.events.SHOW_ERROR, e);
+          PubSub.publish(PubSub.events.SHOW_ERROR, e);
         }
       }
     });

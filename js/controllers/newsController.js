@@ -17,8 +17,8 @@ export default class NewsController {
 
         this.element.appendChild(newsElement);
       }
-    } catch (error) {
-      this.errorMessageController.showError(error);
+    } catch (e) {
+      this.errorMessageController.showError(e);
     }
   }
 }

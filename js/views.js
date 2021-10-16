@@ -1,15 +1,19 @@
 export function showNews(news) {
-  return `<div class="post">
-    <strong class="div">${news.articulo}</strong>
-    <p class="precio">${news.precio}</p>
-    <h2 class="estado">${news.estado}</h2>
+  return `<a href="/detail.html?id=${news.id}">
+    <div class="post">
+  
+      <strong class="div">${news.item}</strong>
+      <p class="precio">${news.price}</p>
 
-    
-</div>`;
+      <h2 class="estado">${news.sale}</h2>
+
+   </div>
+  
+  </a>`;
 }
 
-export function errorView(message) {
-  return `<div class="error">${message}
+export function errorView(e) {
+  return `<div class="error">${e}
   <button>Close</button>
   </div>`;
 }
@@ -24,4 +28,19 @@ export function welcome(message) {
   return `<div class="welcome">${message}
   <button>Close</button>
   </div>`;
+}
+
+export function loaderView() {
+  //pintamos el loader
+  return '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>';
+}
+
+export function detail(news) {
+  return `
+
+      <strong class="div">${news.item}</strong>
+      <p class="precio">${news.price}</p>
+      <h2 class="estado">${news.sale}</h2>
+  
+  `;
 }
