@@ -3,9 +3,9 @@ import DataService from "../services/DataService.js";
 import { detail } from "../views.js/";
 
 export default class DetailController {
-  constructor(element, news) {
+  constructor(element, newsId) {
     this.element = element;
-    this.loadAnuncio(news);
+    this.loadAnuncio(newsId);
   }
 
   async loadAnuncio(newsId) {
