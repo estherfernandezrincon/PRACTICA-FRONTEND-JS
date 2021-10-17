@@ -14,6 +14,8 @@ export default {
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+    //para que se pueda o no borrar el anuncio. Si el anuncio tiene propiedad canBeDeleted y es true se puede borrar
+    news.canBeDeleted = news.userId === this.getAuthUserId();
 
     return news;
   },
@@ -24,7 +26,7 @@ export default {
       const allNews = await response.json();
 
       return allNews.map((news) => {
-        this.parseNews(news);
+        return this.parseNews(news);
       });
     } else {
       throw new Error("Something was wrong ");
@@ -42,9 +44,9 @@ export default {
     }
   },
 
-  post: async function (url, body) {
+  request: async function (method, url, body) {
     const requestConfig = {
-      method: "POST",
+      method: method,
       headers: {
         "content-type": "application/json",
       },
@@ -54,9 +56,8 @@ export default {
       const token = localStorage.getItem("AUTH_TOKEN");
       requestConfig.headers["Authorization"] = `Bearer ${token}`;
     }
-
     const response = await fetch(url, requestConfig);
-    //si el usuario esta ya registrado mostramos el mensaje de banckend
+
     try {
       const data = await response.json();
       if (response.ok) {
@@ -64,9 +65,17 @@ export default {
       } else {
         throw new Error(data.message);
       }
-    } catch (error) {
-      throw error;
+    } catch (e) {
+      throw e;
     }
+  },
+
+  delete: async function (url, body = {}) {
+    return await this.request("DELETE", url, body);
+  },
+
+  post: async function (url, body) {
+    return await this.request("POST", url, body);
   },
 
   newUserRegister: async function (username, password) {
@@ -94,5 +103,31 @@ export default {
       sale,
       price,
     });
+  },
+
+  deleteNews: async function (newsId) {
+    const url = `http://localhost:8000/api/news/${newsId}`;
+    return await this.delete(url);
+  },
+
+  getAuthUserId: function () {
+    const token = localStorage.getItem("AUTH_TOKEN");
+    if (token === null) {
+      return null;
+    }
+    const b64slices = token.split("."); // partimos tken por puntos
+    if (b64slices.length !== 3) {
+      //si no tiene 3 partes no es correcto
+      return null;
+    }
+    const b64data = b64slices[1];
+    try {
+      const userJSON = atob(b64data);
+      const user = JSON.parse(userJSON);
+      return user.userId;
+    } catch (e) {
+      console.log("error in decoding token", e);
+      return null;
+    }
   },
 };

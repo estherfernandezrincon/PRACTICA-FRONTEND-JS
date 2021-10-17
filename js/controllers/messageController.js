@@ -21,32 +21,27 @@ export default class MessageController {
     });
   }
 
-  showMistake(message) {
-    //console.log(message);
-    this.element.innerHTML = errorView(message);
-
+  attachCloseMessageEventListener() {
     const button = this.element.querySelector("button");
     button.addEventListener("click", () => {
       this.hideError();
     });
+  }
+
+  showMistake(message) {
+    //console.log(message);
+    this.element.innerHTML = errorView(message);
+    this.attachCloseMessageEventListener();
   }
 
   showSuccess(message) {
     this.element.innerHTML = successView(message);
-
-    const button = this.element.querySelector("button");
-    button.addEventListener("click", () => {
-      this.hideError();
-    });
+    this.attachCloseMessageEventListener();
   }
   //TODO: mostrar mensaje de bienvenida al hacer log in
   showWelcome(message) {
     this.element.innerHTML = welcome(message);
-
-    const button = this.element.querySelector("button");
-    button.addEventListener("click", () => {
-      this.hideError();
-    });
+    this.attachCloseMessageEventListener();
   }
 
   hideError() {

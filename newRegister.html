@@ -19,10 +19,11 @@
     <div class="welcomeMessage"></div>
 
     <form novalidate > 
-
+    <div class="signin-container">
         <div class="new-user">
             <label for="Name" >Name</label>
             <input type="text" name="name"  placeholder="Your Name"required autofocus>
+      
             <label for="lastName" >Last Name</label>
             <input type="text" name="lastName"  placeholder="Your LastName" required>
         </div>
@@ -32,11 +33,11 @@
         </div>
         <div class="register-form">
             <label for="text">Email</label>
-            <input type="email"  placeholder="email" autocomplete="off" required>
+            <input type="email" id="email" placeholder="email" autocomplete="off" required>
         </div>
         <div class="register-form">
             <label for="text">Password</label>
-            <input type="password"  name="password" placeholder="password"  autocomplete="off" required>
+            <input type="password"  id="password" name="password" placeholder="password"  autocomplete="off" required>
         </div>
         <div>
             <input type="password"name="password" placeholder="password" autocomplete="off" required>
@@ -47,6 +48,7 @@
         <div class="register-form">
             <a href="#recupera contraseña" class="get-pswd">Get Password</a>
         </div>
+    </div>
 
     </form>
     <script type="module" src="js/register.js"></script>

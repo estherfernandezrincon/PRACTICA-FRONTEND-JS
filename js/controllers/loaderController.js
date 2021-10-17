@@ -1,9 +1,10 @@
-import { loaderview } from "../views.js";
+import { loaderView } from "../views.js";
+import PubSub from "../services/Pubsub.js";
 
 export default class LoaderController {
   constructor(element) {
     this.element = element;
-    this.element.innerHTML = loaderview();
+    this.element.innerHTML = loaderView();
     PubSub.subscribe(PubSub.events.SHOW_LOADING, () => {
       this.showLoader();
     });

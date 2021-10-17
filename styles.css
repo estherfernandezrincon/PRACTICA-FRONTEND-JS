@@ -48,7 +48,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*background: URL('/images/lamp.jpg');*/
+  /*background: URL("/images/desert.jpg") top center no-repeat;*/
+  background-color: beige;
   margin: 0;
   padding: 0;
 }
@@ -63,8 +64,9 @@ p {
   font-size: 2.5rem;
 }
 
-h2 {
-  color: red;
+h2,
+strong {
+  color: white;
 }
 
 .back {
@@ -72,24 +74,19 @@ h2 {
   align-items: flex-end;
 }
 
-/* .btn {
-  border-style: double solid;
-  padding: 10px;
-  width: 70px;
-  height: 30px;
-  margin-left: 95.25rem;
-} */
-
 .div-home {
   display: grid;
   margin-top: 50px;
-  grid-template: 180px / auto auto auto auto;
+  grid-template: 210px / auto auto auto auto;
+
+  padding: 10px;
   grid-gap: 10px;
   padding: 10px;
 }
 
 .div-home > div {
-  background-color: rgb(156, 148, 148);
+  background-color: rgb(129, 224, 231);
+
   opacity: 0.7;
   text-align: center;
   padding: 20px 0;
@@ -97,7 +94,7 @@ h2 {
   text-shadow: rgb(10, 0, 0);
   color: white;
   border-style: groove;
-  background-color: #000000;
+  background-color: #202020;
 
   opacity: 0.75;
 }
@@ -139,19 +136,71 @@ footer {
 }
 
 .access {
-  display: inline;
-  text-align: end;
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;
-  background-color: rgb(209, 199, 199);
+  position: fixed;
+
+  width: 100%;
+  height: 3%;
+  left: 350px;
+  display: flex;
+  align-items: center;
 }
 
-.access a {
+.access a,
+.btn {
   font-size: 20px;
   padding: 20px;
   text-decoration: none;
   align-content: space-between;
   margin-right: 50px;
+}
+
+.news {
+  background-color: rgb(156, 148, 148);
+  opacity: 0.7;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  text-shadow: rgb(10, 0, 0);
+  color: white;
+  border-style: groove;
+  background-color: #a5d5eb;
+  width: 50%;
+  align-content: center;
+  margin-left: 450px;
+}
+
+.delete {
+  border: 3px solid #e20707;
+  width: 150px;
+}
+
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  align-items: center;
+}
+
+.register-form,
+.new-user,
+.message {
+  display: flex;
+  align-content: space-around;
+  align-content: flex-end;
+  justify-content: space-around;
+  padding: 0.5em;
+}
+
+#email,
+#password {
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(231, 223, 223, 0.35),
+    -1px 1px 1px rgba(231, 223, 223, 0.35),
+    1px -1px 1px rgba(231, 223, 223, 0.35),
+    -1px -1px 1px rgba(231, 223, 223, 0.35);
 }

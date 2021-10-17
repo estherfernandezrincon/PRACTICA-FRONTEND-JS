@@ -3,27 +3,27 @@
   "news":[
       {   
           "id": 1,
-          "articulo": "lampara",
-          "precio": "100",
-          "estado": "venta"
+          "item": "lampara",
+          "price": "100",
+          "sale": "venta"
         },
         {
           "id": 2,
-          "articulo": "mesa",
-          "precio": "200",
-          "estado": "compra"
+          "item": "mesa",
+          "price": "200",
+          "sale": "compra"
         },
         {
            "id": 3, 
-          "articulo": "sofa",
-          "precio": "500",
-          "estado": "venta"
+          "item": "sofa",
+          "price": "500",
+          "sale": "venta"
         },
         {
           "id": 4, 
-          "articulo": "jarron",
-          "precio": "200",
-          "estado": "venta"
+          "item": "jarron",
+          "price": "200",
+          "sale": "venta"
        }
       ]
   }

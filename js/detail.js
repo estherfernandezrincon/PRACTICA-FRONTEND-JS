@@ -1,5 +1,6 @@
 import LoaderController from "./controllers/loaderController.js";
 import DetailController from "./controllers/detailController.js";
+import MessageController from "./controllers/messageController.js";
 
 window.addEventListener("DOMContentLoaded", function () {
   const loader = document.querySelector(".loader");
@@ -11,4 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
   //instancia del controlador del detalle de anuncio
   const anuncio = document.querySelector(".news");
   new DetailController(anuncio, id);
+
+  const message = document.querySelector(".message");
+  new MessageController(message);
 });

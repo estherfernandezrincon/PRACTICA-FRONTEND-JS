@@ -36,11 +36,19 @@ export function loaderView() {
 }
 
 export function detail(news) {
+  if (news === null) {
+    return "<h1>there are not news to show</h1>";
+  }
+  let btn = "";
+  if (news.canBeDeleted) {
+    btn = '<button class="delete">DELETE</button>';
+  }
   return `
 
       <strong class="div">${news.item}</strong>
       <p class="precio">${news.price}</p>
       <h2 class="estado">${news.sale}</h2>
+      ${btn}
   
   `;
 }
