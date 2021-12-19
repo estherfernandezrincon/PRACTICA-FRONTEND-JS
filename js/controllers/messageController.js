@@ -28,9 +28,8 @@ export default class MessageController {
     });
   }
 
-  showMistake(message) {
-    //console.log(message);
-    this.element.innerHTML = errorView(message);
+  showMistake(e) {
+    this.element.innerHTML = errorView(e);
     this.attachCloseMessageEventListener();
   }
 

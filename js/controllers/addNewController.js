@@ -1,4 +1,4 @@
-import PubSub from "../services/Pubsub.js";
+import PubSub from "../services/PubSub.js";
 import DataService from "../services/DataService.js";
 
 export default class AddNewController {
@@ -13,13 +13,14 @@ export default class AddNewController {
 
       if (this.element.checkValidity()) {
         const data = new FormData(this.element);
+        console.log(data);
         const item = data.get("item");
         const sale = data.get("sale");
         const price = data.get("price");
-        console.log(price);
 
         try {
           const finalResult = await DataService.addNew(item, sale, price);
+          console.log(finalResult);
           PubSub.publish(PubSub.events.SHOW_SUCCESS, "New item registered");
         } catch (e) {
           PubSub.publish(PubSub.events.SHOW_ERROR, e);

@@ -1,5 +1,6 @@
 import AddNewController from "./controllers/addNewController.js";
 import MessageController from "./controllers/messageController.js";
+import DataService from "./services/dataService.js";
 
 window.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
@@ -10,4 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const welcomeMessage = document.querySelector(".welcome");
   new MessageController(welcomeMessage);
+
+  if (DataService.isAuthenticated() === false) {
+    window.location.href = "/login.html?next=/addNew.html";
+  }
 });

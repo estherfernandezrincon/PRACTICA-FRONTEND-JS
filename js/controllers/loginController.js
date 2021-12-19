@@ -16,23 +16,25 @@ export default class LoginController {
         const data = new FormData(this.element);
         const username = data.get("username");
         const password = data.get("password");
+
+        //para que nos diriga a la pagina donde estabamos antes del login
         const url = new URLSearchParams(window.location.search);
-        const page = url.get("page") || "/";
+        const page = url.get("next") || "/";
+
         try {
           const finalResult = await DataService.login(username, password);
-          location.href = page; //redirigimos a pagina principal
+          location.href = page; //redirigimos a pagina de crear anuncio despues de loguearnos
           PubSub.publish(
             PubSub.events.SHOW_WELCOME,
             `Welcome to NODEPOP ${username}`
           );
         } catch (e) {
-          PubSub.publish(PubSub.events.SHOW_ERROR, e);
+          PubSub.publish(
+            PubSub.events.SHOW_ERROR,
+            e,
+            `Sorry ${username} or ${password} are not registered`
+          );
         }
-      } else {
-        PubSub.publish(
-          PubSub.events.SHOW_ERROR,
-          `Sorry ${username} or ${password} are not registered`
-        );
       }
     });
 
