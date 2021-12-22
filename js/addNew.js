@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
   const errorMessage = document.querySelector(".message");
   new MessageController(errorMessage);
 
-  const welcomeMessage = document.querySelector(".welcome");
+  const welcomeMessage = document.querySelector(".message");
   new MessageController(welcomeMessage);
 
   if (DataService.isAuthenticated() === false) {

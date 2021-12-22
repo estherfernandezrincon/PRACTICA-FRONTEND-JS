@@ -44,15 +44,14 @@ export default class RegisterController {
             username,
             password
           );
-
           PubSub.publish(
             PubSub.events.SHOW_SUCCESS,
             `the user ${username} is correctly registered`
           );
-          location.href = "/";
         } catch (e) {
           PubSub.publish(PubSub.events.SHOW_ERROR, e);
         }
+        //location.href = "/";
       } else {
         let errorMessage = "";
         for (const element of this.elements) {
