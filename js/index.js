@@ -2,7 +2,7 @@ import NewsController from "./controllers/newsController.js";
 import ErrorMessageController from "./controllers/errorMessageController.js";
 
 window.addEventListener("DOMContentLoaded", function () {
-  const error = document.querySelector(".error");
+  const error = document.querySelector(".message");
   const errorNews = new ErrorMessageController(error);
 
   const newsListHome = document.querySelector(".div-home");

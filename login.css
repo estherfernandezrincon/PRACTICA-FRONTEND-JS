@@ -1,90 +1,71 @@
-
-  
-body{
-    background: url('./images/lamp.jpg') ;
-
-}
-
-.p , h1{
-    text-align: center;
-    color: #f5f4f4;
-    text-shadow: 
-    1px 1px 1px rgba(17, 17, 17, 0.35),
-    -1px 1px 1px rgba(17, 17, 17, 0.35),
-    1px -1px 1px rgba(17, 17, 17, 0.35),
+.p,
+h1 {
+  text-align: center;
+  color: #f5f4f4;
+  text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.35),
+    -1px 1px 1px rgba(17, 17, 17, 0.35), 1px -1px 1px rgba(17, 17, 17, 0.35),
     -1px -1px 1px rgba(17, 17, 17, 0.35);
-    font-size: 2.5rem;
-    font-weight:bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
-
-
-
 
 .signin-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 25rem;
-    margin-right: 25rem;
-    align-items: center;
-    margin-top: 150px;
-    border-style: groove;
-    padding: 10px;
-    background-color: #000000;
-    opacity: 0.85;
-    font-size: 1.5rem;
-    
+  display: flex;
+  flex-direction: column;
+  margin-left: 25rem;
+  margin-right: 25rem;
+  align-items: center;
+  margin-top: 150px;
+  border-style: groove;
+  padding: 10px;
+  background-color: #000000;
+  opacity: 0.85;
+  font-size: 1.5rem;
 }
 
 .register-form {
-    display: flex;
-    align-content: space-around;
-    align-content: flex-end;
-    justify-content: space-around;
-    padding: 0.5em;
-    font-size: 1.5rem;
-
+  display: flex;
+  align-content: space-around;
+  align-content: flex-end;
+  justify-content: space-around;
+  padding: 0.5em;
+  font-size: 1.5rem;
 }
 
-
-#email , #password {
-    padding: 10px;   
+#email,
+#password {
+  padding: 10px;
 }
 
 label {
-    font-weight: bold;
-    text-shadow: 
-1px 1px 1px rgba(231, 223, 223, 0.35),
--1px 1px 1px rgba(231, 223, 223, 0.35),
-1px -1px 1px rgba(231, 223, 223, 0.35),
--1px -1px 1px rgba(231, 223, 223, 0.35);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(231, 223, 223, 0.35),
+    -1px 1px 1px rgba(231, 223, 223, 0.35),
+    1px -1px 1px rgba(231, 223, 223, 0.35),
+    -1px -1px 1px rgba(231, 223, 223, 0.35);
 }
-
-
 
 .btn {
-    border-style:  double solid;
-    padding: 10px;
-    width: 70px;
-    height: 30px;
-    margin-left:20px;
+  border-style: double solid;
+  padding: 10px;
+  width: 70px;
+  height: 30px;
+  margin-left: 20px;
 }
 
-a ,p{
-    color: white;
-    text-decoration: none;
-    border:  1rem;
-    text-shadow: 
-    1px 1px 1px rgba(17, 17, 17, 0.35),
-    -1px 1px 1px rgba(17, 17, 17, 0.35),
-    1px -1px 1px rgba(17, 17, 17, 0.35),
+a,
+p {
+  color: white;
+  text-decoration: none;
+  border: 1rem;
+  text-shadow: 1px 1px 1px rgba(17, 17, 17, 0.35),
+    -1px 1px 1px rgba(17, 17, 17, 0.35), 1px -1px 1px rgba(17, 17, 17, 0.35),
     -1px -1px 1px rgba(17, 17, 17, 0.35);
 }
 footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    text-align: center;
-    font-size:2.25rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-size: 2.25rem;
 }
-
-
